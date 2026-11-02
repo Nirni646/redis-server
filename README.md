@@ -98,3 +98,7 @@ std::string cmdGetDel(const Args& a){ /* a[0] is the command name */ }
 
 - Linux/WSL only (POSIX sockets). Single node, no replication or clustering.
 - Thread-per-client is simple and fine for hundreds of connections; an `epoll` event loop would be the next step for thousands.
+
+## Benchmark
+
+`redis-benchmark -t set,get -n 100000 -q` (50 clients, no pipelining, WSL2): ~75K SET/s and ~75K GET/s, p50 latency 0.34 ms.
