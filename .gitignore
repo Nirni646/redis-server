@@ -1,0 +1,4 @@
+build/
+my_redis_server
+*.my_rdb
+*.my_rdb.tmp
